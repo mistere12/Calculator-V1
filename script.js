@@ -1,5 +1,5 @@
 function add(num1, num2) {
-    const sum = num1 + num2;
+    const sum = num1 + num2;                                  //tio said sth abt math.log??
     return sum;
 }
 
@@ -21,11 +21,28 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
+  if( num2==0){                       //error
+    return "Error:division by 0"  
+  }
     const quotient = num1 / num2;
     return quotient;
+    
 }
 
+function power(num1, num2) {
+  const power = num1**num2;                                  
+  return power;
+}
 
+function log(num1, num2) {
+                                   //tio said sth abt math.log??
+  return Math.log(num1)/Math.log(num2);
+}
+
+function mod(num1,num2){
+  const remainder = num1%num2;
+  return remainder;
+}
 let firstNumber = 0;          // VARIABLE INITIALIZATION- let variableName = initialValue 
 let secondNumber = 0;
 let selectedOperator= "";   //
@@ -109,13 +126,38 @@ element.addEventListener( "event-type",function(){
    document.getElementById("selected-operator").innerHTML= selectedOperator;
 });  
 
+const powerButtonElement = document.getElementById("power-button");   
+
+powerButtonElement.addEventListener("click", function () {    
+  
+  selectedOperator = "**" ;    // bezi^ ayseram
+  document.getElementById("selected-operator").innerHTML= selectedOperator;
+}); 
+
+const logButtonElement = document.getElementById("log-button");   
+
+logButtonElement.addEventListener("click", function () {    
+  
+  selectedOperator = "log" ;
+  document.getElementById("selected-operator").innerHTML= selectedOperator;
+}); 
+
+const modButtonElement = document.getElementById("mod-button");   
+
+modButtonElement.addEventListener("click", function () {    
+  
+  selectedOperator = "%" ;
+  document.getElementById("selected-operator").innerHTML= selectedOperator;
+}); 
+
+
    //evaluate button endisera:   
  const evaluateButtonElement = document.getElementById("evaluate-button");
 
  evaluateButtonElement.addEventListener ("click", function(){
    // const h1Element = document.createElement("h1");
    // h1Element.innerHTML = "result:" +   (firstNumber,secondNumber);  // + blo mn operation ygba?? lehulum leyebcha meserat alebet??
-   // document.body.appendChild(h1Element);
+   // document.body.appendChild(h1Element);          //ayseram endezi
 
    let result;
    switch(selectedOperator){
@@ -126,6 +168,12 @@ element.addEventListener( "event-type",function(){
     case "*": result=multiply(firstNumber,secondNumber);
     break;
     case "/": result=divide(firstNumber,secondNumber);
+    break;
+    case "**": result=power(firstNumber,secondNumber);
+    break;
+    case "log": result=log(firstNumber,secondNumber);
+    break;
+    case "%": result=mod(firstNumber,secondNumber);
     break;
     default: result="select an operator";
    }
