@@ -35,8 +35,8 @@ function power(num1, num2) {
 }
 
 function log(num1, num2) {
-                                   //tio said sth abt math.log??
-  return Math.log(num1)/Math.log(num2);
+ 
+  return Math.log(num1)/Math.log(num2);            //Math.log(or any operation)??!
 }
 
 function mod(num1,num2){
