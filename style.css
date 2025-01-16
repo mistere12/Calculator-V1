@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #e76d6df3;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.calculator-container {
+    display: flex;
+    
+    text-align: center;
+    width: auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+
+.operations {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+.evaluate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#evaluate-button {
+    width: auto;
+    background-color:burlywood;
+}
+
+#result {
+    width: 45%;
+    font-size: 1.2em;
+    color: #0a0a0a;
+}
+#first-number {
+background-color: burlywood;
+}
+#second-number{
+background-color: burlywood;
+}
+  
